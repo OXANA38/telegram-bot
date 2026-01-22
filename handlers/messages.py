@@ -192,10 +192,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Проверяем, находится ли пользователь в режиме связи с менеджером
     if context.user_data.get('forwarding_to_admin'):
-        # ... остальной код    
-
-    # Проверяем, находится ли пользователь в режиме связи с менеджером
-    if context.user_data.get('forwarding_to_admin'):
         # Пересылаем сообщение администратору
         admin_message = f"📩 Сообщение от пользователя {update.message.from_user.name} (ID: {update.message.from_user.id}):\n{text}"
         try:
@@ -246,6 +242,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
 
             await update.message.reply_text("🤖 Используй кнопки ниже для взаимодействия.", reply_markup=get_main_menu())
+
 
 
 
