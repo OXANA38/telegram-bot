@@ -50,7 +50,7 @@ async def handle_support(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("✉️ Напишите свой вопрос. Менеджер ответит как можно скорее.")
 
 async def handle_registration(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Обработка кнопки '👉 Зарегистрироваться'"""
+    """Обработка кнопки '👉 Зарегистрироваться в Lime'"""
     await update.message.reply_text(
         "🚀 Жми на кнопку ниже, чтобы перейти к регистрации:",
         reply_markup=InlineKeyboardMarkup([
@@ -238,3 +238,4 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
 
             await update.message.reply_text("🤖 Используй кнопки ниже для взаимодействия.", reply_markup=get_main_menu())
+
