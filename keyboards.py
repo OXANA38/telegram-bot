@@ -6,7 +6,7 @@ def get_main_menu():
     return ReplyKeyboardMarkup([
         ['📚 Школа новичка'],
         ['📞 Связь с менеджером'],
-        ['👉 Зарегистрироваться в Lime'],
+        ['👉 зарегистрироваться в lime'],
         ['💼 Citro Wallet'],
         ['➡ Выбор БНП']
     ], resize_keyboard=True)
@@ -109,4 +109,5 @@ def get_back_to_menu_button(menu_type):
     elif menu_type == "bitlime":
         return InlineKeyboardMarkup([[InlineKeyboardButton("⬅ Назад", callback_data="back_to_bitlime_menu")]])
     else:
+
         return InlineKeyboardMarkup([[InlineKeyboardButton("⬅ Назад", callback_data="back_to_withdrawal_menu")]])
