@@ -181,10 +181,18 @@ async def handle_back_to_lessons(update: Update, context: ContextTypes.DEFAULT_T
     """Обработка кнопки '⬅ Назад к урокам'"""
     await update.message.reply_text("Выбери урок:", reply_markup=get_lessons_menu())
 
-# === ГЛАВНЫЙ ОБРАБОТЧИК СООБЩЕНИЙ ===
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Главный обработчик текстовых сообщений"""
     text = update.message.text.strip().lower()
+    
+    # === ДОБАВЬ ЭТИ СТРОКИ ДЛЯ ОТЛАДКИ ===
+    print(f"🟢 DEBUG RENDER: Получен текст: '{text}'")
+    print(f"🟢 DEBUG RENDER: Сравниваем с ключом: '👉 зарегистрироваться в lime'")
+    # ======================================
+    
+    # Проверяем, находится ли пользователь в режиме связи с менеджером
+    if context.user_data.get('forwarding_to_admin'):
+        # ... остальной код    
 
     # Проверяем, находится ли пользователь в режиме связи с менеджером
     if context.user_data.get('forwarding_to_admin'):
@@ -238,6 +246,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
 
             await update.message.reply_text("🤖 Используй кнопки ниже для взаимодействия.", reply_markup=get_main_menu())
+
 
 
 
