@@ -205,7 +205,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     handlers = {
         '📚 школа новичка': handle_school,
         '📞 связь с менеджером': handle_support,
-        '👉 зарегистрироваться': handle_registration,
+        '👉 Зарегистрироваться в Lime': handle_registration,
         '➡ выбор бнп': handle_bnp_selection,
         '💼 citro wallet': handle_citro_wallet,
         '💸 вывод средств': handle_withdrawal,
@@ -236,4 +236,5 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             context.user_data['forwarding_to_admin'] = False
             await update.message.reply_text("Вы вернулись в главное меню", reply_markup=get_main_menu())
         else:
+
             await update.message.reply_text("🤖 Используй кнопки ниже для взаимодействия.", reply_markup=get_main_menu())
