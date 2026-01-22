@@ -1,0 +1,10 @@
+*.pyc
+__pycache__/
+.cache/
+.local/
+.virtualenvs/
+*.log
+*.zip
+.env
+*.db
+*.sqlite3
